@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      >
+
+    <h:body>
+<h:form>
+        <ui:composition template="./admintemp.xhtml"
+                        xmlns:b="http://bootsfaces.net/ui"
+                        xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+            
+
+            <ui:define name="content">
+               <div class="col-md-2"></div>
+                    <div class="col-md-10">
+                        <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 >Araç Listesi</h3>
+                           
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <h:dataTable class="table table-striped table-bordered table-hover" id="dataTables-example" value="#{login.araclarcek()}" var="a">
+                                   
+                                   
+                                                                                 
+                                        <h:column class="odd gradeX center" >
+                                             <f:facet name="header"  >ID</f:facet>  
+                                               <h:outputLabel value="#{a.id}"></h:outputLabel>
+                                        </h:column>
+                                        <h:column class="odd gradeX center" >
+                                          <f:facet name="header" ><center>MARKA</center></f:facet> 
+                                                 <center>    <h:outputLabel class="center" value="#{a.marka}"></h:outputLabel></center>
+                                        </h:column>
+                                        <h:column class="odd gradeX" >
+                                            <f:facet name="header"><center>MODEL</center></f:facet> 
+                                                    <center> <h:outputLabel value="#{a.model}"></h:outputLabel></center>
+                                        </h:column>
+                                        <h:column class="odd gradeX" >
+                                             <f:facet name="header"><center>YIL</center></f:facet> 
+                                                    <center> <h:outputLabel value="#{a.yil}"></h:outputLabel></center>
+                                        </h:column>
+                                    
+                                        <h:column class="odd gradeX" >
+                                              <f:facet name="header"><center>KOLTUK</center></f:facet> 
+                                                    <center> <h:outputLabel value="#{a.koltuk}"></h:outputLabel></center>
+                                        </h:column>
+                                        <h:column class="odd gradeX" >
+                                             <f:facet name="header"><center>KAPİ</center></f:facet> 
+                                                <center> <h:outputLabel value="#{a.kapi}"></h:outputLabel></center>
+                                            
+                                        </h:column>
+                                        <h:column class="odd gradeX" >
+                                             <f:facet name="header"><center>VİTES</center></f:facet> 
+                                                    <center> <h:outputLabel value="#{a.vites}"></h:outputLabel></center>
+                                        </h:column>
+                                        <h:column class="odd gradeX" >
+                                             <f:facet name="header"><center>BAGAJ</center></f:facet> 
+                                                    <center> <h:outputLabel value="#{a.bagaj}"></h:outputLabel></center>
+                                        </h:column>
+                                        <h:column class="odd gradeX" >
+                                             <f:facet name="header"><center>YAKİT</center></f:facet> 
+                                                     <center> <h:outputLabel value="#{a.yakit}"></h:outputLabel></center>
+                                        </h:column>
+                                        <h:column class="odd gradeX" >
+                                             <f:facet name="header"><center>KLİMA</center></f:facet> 
+                                                     <center> <h:outputLabel value="#{a.klima}"></h:outputLabel></center>
+                                        </h:column>
+                                        <h:column class="odd gradeX" >
+                                               <f:facet name="header"><center>FİYAT</center></f:facet> 
+                                               <center> <h:outputLabel value="#{a.fiyat} TL"></h:outputLabel></center>
+                                        </h:column>
+                                                    <h:column class="odd gradeX" >
+                                                         <f:facet name="header">İŞLEM</f:facet>
+                                                         <center>
+                                                         <div class="btn-group" >
+											  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">İşlem <span class="caret"></span></button>
+											  <ul class="dropdown-menu">
+                                                                                              <h:form>
+                                                                                                  <li><h:commandLink value="Düzenle" action="#{aracislem.aracDoldur()}"><f:param name="aracID" value="#{a.id}"/></h:commandLink></li>
+                                                                                                <li><h:commandLink value="Sil" action="#{aracislem.aracsil()}"><f:param name="aracID" value="#{a.id}"/></h:commandLink></li>
+												<li class="divider"></li>
+												
+                                                                                              </h:form>
+											  </ul>
+                                                             
+											</div>
+                                                         </center>
+                                      </h:column>
+                                         
+                                      
+                                </h:dataTable>
+                                 <!--- Modal Kısmı araç eklemek için! -->
+                          
+                                 
+                                    
+                           
+                                 
+                           
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                    <div style="float:right;margin-top: 10px;">
+                        <h:form><h:commandButton class="btn btn-primary btn-lg" style="background: red !important;" value="Araç Ekle"  action="aracekle.xhtml"></h:commandButton></h:form>
+                       
+                                 </div>
+                    <div style="float:right;margin-top: 10px;">
+                        <h:form><h:commandButton class="btn btn-primary btn-lg" style="margin-right:10px;" value="Marka Ekle"  action="markaekle.xhtml"></h:commandButton></h:form>
+                       
+                                 </div>
+                    </div>
+                
+            </ui:define>
+
+        </ui:composition>
+    </h:form>
+    </h:body>
+</html>

@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+       xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./admintemp.xhtml">
+
+            <ui:define name="content">
+                <div id="page-wrapper" >
+                    <div id="page-inner">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>Seversen Döner Yönetim Sayfasına Hoş Geldiniz</h2>   
+                                 <h5>Bir HEX00 Yapımıdır! </h5>
+                             </div>
+                        </div>     
+                    <!-- /. ROW  -->
+                  <hr />
+                <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-6">           
+                    <a href="mesajlarim.xhtml">	<div class="panel panel-back noti-box">
+                <span class="icon-box bg-color-red set-icon">
+                    <i class="fa fa-envelope-o"></i>
+                </span>
+                <div class="text-box" >
+                    <p class="main-text">#{login.karsilama()} Yeni</p>
+                    <p class="text-muted">Mesajınız Var</p>
+                </div>
+             </div>
+                    </a>
+		     </div>
+                   
+                    <div class="col-md-3 col-sm-6 col-xs-6">           
+                        <a href="kirakontrol.xhtml"><div class="panel panel-back noti-box">
+                <span class="icon-box bg-color-blue set-icon">
+                    <i class="fa fa-bell-o"></i>
+                </span>
+                <div class="text-box" >
+                    <p class="main-text">#{login.karsilama2()} Yeni</p>
+                    <p class="text-muted">Kiralama İsteği Var</p>
+                </div>
+             </div>
+                         </a>
+		     </div>
+                   
+			</div>
+                 <!-- /. ROW  -->
+                    </div>
+                 </div>
+                                         
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

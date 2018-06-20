@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <body>
+
+        <ui:composition template="./admintemp.xhtml">
+
+            <ui:define name="content">
+                <h:form enctype="multipart/form-data">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-10">
+                      <div class="panel-body">
+                            <div class="table-responsive">
+                                <div class="form-group has-success">
+                                 <h:inputFile value="#{aracislem.image}">
+                                       <!--  <f:ajax event="change" listener="#{aracislem.doUpload()}" execute="@form" render="@form"/> -->
+                                    </h:inputFile>
+                                    <img src="#{aracislem.imgpath}" height="175" width="175" style="border:3px solid #DDD;"> </img>
+                                       
+                                </div>
+                                <div class="form-group has-success">
+                                            <label class="control-label">Araç Marka</label>
+                                                 <h:selectOneMenu class="form-control" value="#{aracislem.marka}"> 
+                                                     <f:selectItem  itemValue="0" itemLabel="Marka Seçiniz" />
+                                                     <c:forEach  items="#{login.markayukle()}" var="marka">
+                                                         <f:selectItem  itemValue="#{marka.markaid}"  itemLabel="#{marka.markam}"  />
+                                                     </c:forEach>
+                                                 </h:selectOneMenu>
+                                        </div>
+                                            <div class="form-group has-success">
+                                                  <label class="control-label" for="inputSuccess">Modeli</label>
+                                                  <h:inputText  value="#{aracislem.model}" class="form-control"/>
+                                            </div>
+                                             <div class="form-group has-success">
+                                                 <label class="control-label" for="inputSuccess">Yılı</label>
+                                                 <h:inputText value="#{aracislem.yil}" class="form-control" />
+                                            </div>
+                                             <div class="form-group has-success">
+                                                 <label class="control-label" for="inputSuccess">Kişi Sayısı</label>
+                                                 <h:inputText value="#{aracislem.koltuk}" class="form-control" />
+                                            </div>
+                                             <div class="form-group has-success">
+                                                <label class="control-label" for="inputSuccess">Kapı</label>
+                                                <h:inputText value="#{aracislem.kapi}" class="form-control" />
+                                            </div>
+                                             <div class="form-group has-success">
+                                                 <label class="control-label" for="inputSuccess">Vites</label>
+                                                 <h:selectOneMenu class="form-control" value="#{aracislem.vites}">
+                                                       <f:selectItem  itemValue="0" itemLabel="Vites Tipi Seçiniz"/>
+                                                       <f:selectItem  itemValue="Otomatik" itemLabel="Otomatik"/>
+                                                       <f:selectItem  itemValue="Manuel" itemLabel="Manuel"/>
+                                                 </h:selectOneMenu>
+                                            </div>
+                                             <div class="form-group has-success">
+                                                <label class="control-label" for="inputSuccess">Bagaj Kapasitesi</label>
+                                                <h:inputText value="#{aracislem.bagaj}" class="form-control"/>
+                                            </div>
+                                             <div class="form-group has-success">
+                                                 <label class="control-label" for="inputSuccess">Yakıt Türü</label>
+                                                 <h:selectOneMenu class="form-control" value="#{aracislem.yakit}">
+                                                       <f:selectItem  itemValue="0" itemLabel="Yakıt Türü Seçiniz"/>
+                                                       <f:selectItem  itemValue="Dizel" itemLabel="Dizel"/>
+                                                       <f:selectItem  itemValue="Benzin" itemLabel="Benzin"/>
+                                                         <f:selectItem  itemValue="LPG" itemLabel="LPG"/>
+                                                 </h:selectOneMenu>
+                                            </div>
+                                            <div class="form-group has-success">
+                                                <label class="control-label" for="inputSuccess">Klima</label>
+                                                <h:inputText value="#{aracislem.klima}" class="form-control" />
+                                            </div>
+                                          <div class="form-group input-group">
+                                              <h:inputText value="#{aracislem.fiyat}"  class="form-control sagadaya" />
+                                            <span class="input-group-addon">TL</span>
+                                        </div>
+                                <div class="form-group hidden">
+                                                  <h:inputHidden  value="#{aracislem.aracID}"  class="form-control"/>
+                                            </div>
+                                <h:commandButton value="Güncelle" style="float:right" action="#{aracislem.aracGuncelle()}" class="btn btn-primary"></h:commandButton>
+                            
+                                </div>
+                          </div>
+                        </div>
+                    
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

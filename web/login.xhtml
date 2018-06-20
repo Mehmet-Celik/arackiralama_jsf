@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Seversen Döner Araç Kiralama A.Ş. Giriş Sayfası</title>
+          <link rel="stylesheet" href="assets/css/login.css"/>
+          <link href="assets/admin/css/bootstrap.css" rel="stylesheet"  />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/admin/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link href="assets/admin/css/custom.css" rel="stylesheet" />
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   <link rel="shortcut icon" href="assets/ico/favicon.ico"/>
+             <script src="assets/js/login.js"></script>
+    </h:head>
+    <h:body>
+        <div class="container">
+	<div class="login-container">
+            <div id="output"></div>
+            <div class="avatar"></div>
+            <div id="form-box animated">
+                <h:form >
+                    
+                    <h:inputText class="name" value="#{login.kul}"  ></h:inputText>
+                    <h:message for="kul"></h:message>
+                    <h:inputSecret class="name pass" value="#{login.pass}"></h:inputSecret>
+                     <h:message for="pass"></h:message>
+                     <h:commandButton class="btn btn-success btn-lg"  value="Giriş" action="#{login.giris()}" ></h:commandButton>  <h:commandButton class="btn btn-danger btn-lg"  value="Vazgeç" action="#{kiralama.geri()}" ></h:commandButton>
+                </h:form>
+            </div>
+        </div>
+        
+</div>
+    </h:body>
+   
+</html>
+

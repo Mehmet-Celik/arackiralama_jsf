@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+         <title>Araç Kiralam | Seversen Döner Araç Kiralama A.Ş.</title>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+             <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:700,300,400"/>       
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="assets/elegant-font/code/style.css"/>
+        <link rel="stylesheet" href="assets/css/animate.css"/>
+        <link rel="stylesheet" href="assets/css/magnific-popup.css"/>
+	<link rel="stylesheet" href="assets/css/form-elements.css"/>
+        <link rel="stylesheet" href="assets/css/style.css"/>
+        <link rel="stylesheet" href="assets/css/media-queries.css" />
+        <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+    </h:head>
+    <h:body>
+        <!--Pre load için kodlarımız -->
+        
+         <nav class="navbar navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.xhtml" title="Seversen Döner Araç Kiralama A.Ş.">Seversen Döner Araç Kiralama A.Ş.</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="top-navbar-1">
+					<ul class="nav navbar-nav navbar-right">
+                                            <li><a href="#{kiralama.geri()}">Hizmetlerimiz</a></li>
+						<li><a href="#{kiralama.geri()}">Araçlarımız</a></li>
+						<li><a href="#{kiralama.geri()}">Hakkımızda</a></li>
+						<li><a href="#{kiralama.geri()}">iletişim</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+        <!-- Block 2 --><h:form>
+        <div class="block-2-container section-container">
+	        <div class="container" style="margin-top: 120px">
+	            <div class="row">
+	            	<div class="col-sm-6 block-2-box block-2-left block-2-media wow fadeInLeft" >
+	            		<div class="block-2-img-container">
+                                    <img src="#{kiralama.imgyol}" alt=""  />
+                                   
+	            			<div class="img-container-line line-1"></div>
+	            			<div class="img-container-line line-2"></div>
+	            			<div class="img-container-line line-3"></div>
+	            		</div>
+	            	</div>
+                        
+	            	<div class="col-sm-6 block-2-box block-2-right wow fadeInUp">	            		
+                            <h3>#{kiralama.marka} - #{kiralama.model}</h3>
+                            
+                            <h:inputHidden value="#{kiralama.aracid}"></h:inputHidden>
+                            <h:inputHidden value="#{kiralama.fiyat}"></h:inputHidden>
+	            		<ul>
+	            			<li>
+                                            <span aria-hidden="true" class="icon_check list-icon"></span><b>YIL:</b> #{kiralama.yil}
+	            			</li>
+	            			<li>
+	            				<span aria-hidden="true" class="icon_check list-icon"></span><b>KOLTUK:</b> #{kiralama.koltuk}
+	            			</li>
+	            			<li>
+	            				<span aria-hidden="true" class="icon_check list-icon"></span><b>KAPI:</b> #{kiralama.kapi} 
+	            			</li>
+	            			<li>
+	            				<span aria-hidden="true" class="icon_check list-icon"></span><b>VİTES:</b> #{kiralama.vites}
+	            			</li>
+                                         <li>
+	            				<span aria-hidden="true" class="icon_check list-icon"></span><b>BAGAJ:</b> #{kiralama.bagaj}
+	            			</li>
+                                        <li>
+	            				<span aria-hidden="true" class="icon_check list-icon"></span><b>YAKIT:</b> #{kiralama.yakit}
+	            			</li>
+                                        <li>
+	            				<span aria-hidden="true" class="icon_check list-icon"></span><b>KLİMA:</b> #{kiralama.klima}
+	            			</li>
+                                        <li>
+	            				<span aria-hidden="true" class="icon_check list-icon"></span><b>FİYAT:</b> #{kiralama.fiyat} TL
+	            			</li>
+	            		</ul>
+                            
+                    
+	            </div>
+                    <div class="form-group has-success">
+                          <label class="control-label" for="inputSuccess">Ad</label>
+                          <h:inputText  value="#{kiralama.ad}" class="form-control" style="color:black !important"/>
+                     </div>
+                     <div class="form-group has-success">
+                          <label class="control-label" for="inputSuccess">Soyad</label>
+                         <h:inputText  value="#{kiralama.soyad}" class="form-control" style="color:black !important"/>
+                     </div>
+                     <div class="form-group has-success">
+                          <label class="control-label" for="inputSuccess">Telefon</label>
+                         <h:inputText  value="#{kiralama.tel}" class="form-control" style="color:black !important"/>
+                     </div>
+                     <div class="form-group has-success">
+                          <label class="control-label" for="inputSuccess">E-Mail</label>
+                         <h:inputText  value="#{kiralama.mail}" class="form-control" style="color:black !important"/>
+                     </div>
+                     <div class="form-group has-success">
+                          <label class="control-label" for="inputSuccess">Yaş</label>
+                         <h:inputText value="#{kiralama.yas}" class="form-control" style="color:black !important"/>
+                     </div>
+                     <div class="form-group has-success">
+                          <label class="control-label" for="inputSuccess">Başlangıç Tarihi</label><br />
+                          <h:selectOneMenu  value="#{kiralama.sgun}"> 
+                                                     <f:selectItem  itemValue="0" itemLabel="Gün Seçiniz" />
+                                                     <c:forEach  begin="0" end="30" var="gun">
+                                                         <f:selectItem  itemValue="#{kiralama.gunum[gun]}"  itemLabel="#{kiralama.gunum[gun]}"  />
+                                                     </c:forEach>
+                           </h:selectOneMenu>
+                           <h:selectOneMenu value="#{kiralama.say}" > 
+                                                     <f:selectItem  itemValue="0" itemLabel="Ay Seçiniz" />
+                                                     <c:forEach  begin="0" end="11" var="ay">
+                                                         <f:selectItem  itemValue="#{kiralama.ayim[ay]}"  itemLabel="#{kiralama.ayim[ay]}"  />
+                                                     </c:forEach>
+                           </h:selectOneMenu>
+                           <h:selectOneMenu  value="#{kiralama.syil}"> 
+                                                     <f:selectItem  itemValue="0" itemLabel="Yıl Seçiniz" />
+                                                     <c:forEach  begin="0" end="3" var="yil">
+                                                         <f:selectItem  itemValue="#{kiralama.yilim[yil]}"  itemLabel="#{kiralama.yilim[yil]}"  />
+                                                     </c:forEach>
+                           </h:selectOneMenu>
+                          
+                     </div>
+                     <div class="form-group has-success">
+                          <label class="control-label" for="inputSuccess">Bitiş Tarihi</label>
+                          <br />
+                          <h:selectOneMenu value="#{kiralama.bgun}" > 
+                                                     <f:selectItem  itemValue="0" itemLabel="Gün Seçiniz" />
+                                                     <c:forEach  begin="0" end="30" var="gun">
+                                                         <f:selectItem  itemValue="#{kiralama.gunum[gun]}"  itemLabel="#{kiralama.gunum[gun]}"  />
+                                                     </c:forEach>
+                           </h:selectOneMenu>
+                           <h:selectOneMenu  value="#{kiralama.bay}"> 
+                                                     <f:selectItem  itemValue="0" itemLabel="Ay Seçiniz" />
+                                                     <c:forEach  begin="0" end="11" var="ay">
+                                                         <f:selectItem  itemValue="#{kiralama.ayim[ay]}"  itemLabel="#{kiralama.ayim[ay]}"  />
+                                                     </c:forEach>
+                           </h:selectOneMenu>
+                           <h:selectOneMenu  value="#{kiralama.byil}"> 
+                                                     <f:selectItem  itemValue="0" itemLabel="Yıl Seçiniz" />
+                                                     <c:forEach  begin="0" end="3" var="yil">
+                                                         <f:selectItem  itemValue="#{kiralama.yilim[yil]}"  itemLabel="#{kiralama.yilim[yil]}"  />
+                                                     </c:forEach>
+                           </h:selectOneMenu>
+                          
+                     </div>
+                    <div> 
+                       <h:commandButton value="Kirala"  action="#{kiralama.kiraKayıt()}" class="btn btn-primary btn-lg"></h:commandButton>
+                    <a href="#{kiralama.geri()}" class="btn btn-danger btn-lg">Vazgeç</a></div>
+	            	</div>
+	        </div>
+        </div>
+            </h:form>
+         <!-- Footer -->
+        <footer  >
+	        <div class="container">
+	        	<div class="row">
+		        	<div class="col-sm-12">
+		        		<div class="scroll-to-top">
+		        			<a href="#"><i class="fa fa-chevron-up"></i></a>
+		        		</div>
+		        	</div>
+		        </div>
+	            <div class="row">
+                    <div class="col-sm-7 footer-copyright">
+                    	&copy; Tüm hakları saklı olabilir bizde bilmiyoruz. <a href="#">HEX00</a>
+                    </div>
+                    <div class="col-sm-5 footer-social">
+                    	<a href="#"><i class="fa fa-facebook"></i></a>
+	                	<a href="#"><i class="fa fa-dribbble"></i></a>
+	                    <a href="#"><i class="fa fa-twitter"></i></a>
+	                    <a href="#"><i class="fa fa-google-plus"></i></a>
+	                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+	            </div>
+	        </div>
+        </footer>
+         <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/retina-1.1.0.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/waypoints.min.js"></script>
+        <script src="assets/js/jquery.countTo.js"></script>
+        <script src="assets/js/masonry.pkgd.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+    </h:body>
+</html>
+

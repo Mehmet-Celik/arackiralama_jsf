@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./admintemp.xhtml">
+
+            <ui:define name="content">
+                   <div class="col-md-2"></div>
+                    <div class="col-md-10">
+                        <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 >Kullanıcı Listesi</h3>
+                           
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <h:dataTable class="table table-striped table-bordered table-hover" id="dataTables-example" value="#{kullaniciislem.uyeGetir()}" var="uye">
+                                   
+                                   
+                                                                                 
+                                        <h:column class="odd gradeX center" >
+                                            <f:facet name="header"  >ID</f:facet>  
+                                               <h:outputLabel value="#{uye.id}"></h:outputLabel>
+                                        </h:column>
+                                        <h:column class="odd gradeX center" >
+                                            <f:facet name="header" ><center>AD</center></f:facet> 
+                                            <center><h:outputLabel class="center" value="#{uye.ad}"></h:outputLabel></center>
+                                        </h:column>
+                                        <h:column class="odd gradeX" >
+                                            <f:facet name="header"><center>SOYAD</center></f:facet> 
+                                            <center> <h:outputLabel value="#{uye.soyad}"></h:outputLabel></center>
+                                        </h:column>
+                                        <h:column class="odd gradeX" >
+                                             <f:facet name="header"><center>KULLANICI ADI</center></f:facet> 
+                                             <center> <h:outputLabel value="#{uye.kad}"></h:outputLabel></center>
+                                        </h:column>
+                                    
+                                        <h:column class="odd gradeX" >
+                                              <f:facet name="header"><center>ŞİFRE</center></f:facet> 
+                                              <center> <h:outputLabel value="#{uye.pass}"></h:outputLabel></center>
+                                        </h:column>
+                                        <h:column class="odd gradeX" >
+                                             <f:facet name="header"><center>E-MAİL</center></f:facet> 
+                                             <center> <h:outputLabel value="#{uye.mail}"></h:outputLabel></center>
+                                            
+                                        </h:column>
+                                        <h:column class="odd gradeX" >
+                                             <f:facet name="header"><center>YETKİ</center></f:facet> 
+                                                    <center> <h:outputLabel value="#{uye.yetki}"></h:outputLabel></center>
+                                        </h:column>
+                                         <h:column class="odd gradeX" >
+                                                         <f:facet name="header">İŞLEM</f:facet>
+                                                         <center>
+                                                            <div class="btn-group" >
+								 <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">İşlem <span class="caret"></span></button>
+                                                                    <ul class="dropdown-menu">
+                                                                        <h:form>
+                                                                            <li><h:commandLink value="Düzenle"  class="btn btn-warning"><f:param name="uyeID" value="#{uye.id}"/></h:commandLink></li>
+                                                                            <li><h:commandLink value="Sil" action="#{kullaniciislem.uyeSil()}" class="btn btn-danger"><f:param name="uyeID" value="#{uye.id}"/></h:commandLink></li>
+                                                                        </h:form>
+                                                                    </ul>
+                                                            </div>
+                                                         </center>
+                                      </h:column>
+                                         
+                                      
+                                </h:dataTable>
+                                 <!--- Modal Kısmı araç eklemek için! -->
+                          
+                                 
+                                    
+                           
+                                 
+                           
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                    
+                    <div style="float:right;margin-top: 10px;">
+                        <h:form><h:commandButton class="btn btn-primary btn-lg"  style="margin-right:10px;" value="Kullanıcı Ekle"  action="kullaniciekle.xhtml"></h:commandButton></h:form>
+                       
+                                 </div>
+                    </div>
+               
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
